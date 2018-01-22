@@ -7,11 +7,11 @@ function getSnacks (req, res, next) {
 
 function createSnack (req, res, next) {
   const {name} = req.body
-  const snack = model.createSnack(name)
+  const snack = model.create(name)
 
    if(!name) {
      return next ({
-       status: 400, 
+       status: 400,
        message: `field name are required`
      })
    }
